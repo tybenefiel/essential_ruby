@@ -14,7 +14,14 @@
 #   http://en.wikipedia.org/wiki/Mortgage_calculator
 
 # =========================================
-# Your code to define the method goes here.
+
+def pmt(interest_rate,payments,principal)
+  numerator =interest_rate*principal*(1 + interest_rate)**payments
+  denominator= (1+ interest_rate)**payments - 1
+  return numerator/denominator.to_f
+end
+
+puts pmt(0.01,60,30000)
 # =========================================
 
-puts "Your monthly payment will be #{pmt(0.01, 60, 30000)}."
+
